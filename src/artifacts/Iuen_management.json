@@ -49,24 +49,10 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"get_all_uens()": "b3d6da6e",
 			"get_name(string)": "a8f5d7a6"
 		}
 	},
 	"abi": [
-		{
-			"inputs": [],
-			"name": "get_all_uens",
-			"outputs": [
-				{
-					"internalType": "string[]",
-					"name": "",
-					"type": "string[]"
-				}
-			],
-			"stateMutability": "view",
-			"type": "function"
-		},
 		{
 			"inputs": [
 				{

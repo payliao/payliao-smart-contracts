@@ -120,11 +120,11 @@
 			]
 		},
 		"sgdm.sol": {
-			"keccak256": "0x595f8a9c5d6500db8fb2443129a79e37e16b9342cbaffb38fc8aafbd4fb53f94",
+			"keccak256": "0x58b337b0d7e30ee47566a314c2a823f40a48ef3ab85aa26797479f7ba0234a31",
 			"license": "Proprietary",
 			"urls": [
-				"bzz-raw://367030dd5de65a51217448596d3bec8f98cc308a7b8e245e809017a94a5b131a",
-				"dweb:/ipfs/QmcpbpdyZpu8m5GbhYF21MV79qyEL9DELPWZUT4s55jHoX"
+				"bzz-raw://5d4d4f730bc6e161d0e461a86dc0e789977013681402cf4fe8635b0865ebe488",
+				"dweb:/ipfs/Qmc3MZpfVaJVfctf3RiX8BYpD4swhA6sLN1SwQH67gb347"
 			]
 		}
 	},

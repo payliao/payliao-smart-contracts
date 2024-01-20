@@ -73,6 +73,12 @@
 					},
 					{
 						"indexed": false,
+						"internalType": "string[]",
+						"name": "_names",
+						"type": "string[]"
+					},
+					{
+						"indexed": false,
 						"internalType": "uint256",
 						"name": "_timestamp",
 						"type": "uint256"
@@ -152,6 +158,11 @@
 						"type": "string[]"
 					},
 					{
+						"internalType": "string[]",
+						"name": "_names",
+						"type": "string[]"
+					},
+					{
 						"internalType": "address[]",
 						"name": "_admins",
 						"type": "address[]"
@@ -181,6 +192,16 @@
 						"internalType": "string[]",
 						"name": "_uens",
 						"type": "string[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "_names",
+						"type": "string[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "_admins",
+						"type": "address[]"
 					}
 				],
 				"name": "remove_whitelist_to_uen_mapping",
@@ -209,43 +230,11 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "uen_list",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [],
 				"name": "uen_management_contract",
 				"outputs": [
 					{
 						"internalType": "contract Iuen_management",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "uen_management_contract_address",
-				"outputs": [
-					{
-						"internalType": "address",
 						"name": "",
 						"type": "address"
 					}
@@ -358,11 +347,11 @@
 			]
 		},
 		"whitelist.sol": {
-			"keccak256": "0xf6f82b8daccf52ca8a06a0ae2a950012305ca705fe8fd6f68eca2341e1141b45",
+			"keccak256": "0xfcb35f3211e61c621cd7851869f6b600cbe125b63e6c632b5a6a291ea965d06b",
 			"license": "Proprietary",
 			"urls": [
-				"bzz-raw://52b724de103ffa610ebac20895ede7b095c2899182fcaeabd1abc03e3090f184",
-				"dweb:/ipfs/QmfQkTKao8wdhp2mNSgsBZewkbJejF3UQ5hUYjWtfqH5ko"
+				"bzz-raw://6346929ce35cdfad01b432d1b79d271e1185eef7c50e89c0978f2d6a6aabd351",
+				"dweb:/ipfs/QmVD3K5TZyBD3dDL9M9W84nEW3MCVyAGCbinRKwHoSzMrt"
 			]
 		}
 	},
