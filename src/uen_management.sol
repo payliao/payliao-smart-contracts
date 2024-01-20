@@ -28,12 +28,6 @@ contract uen_management is Ownable {
     // Countains the mapping of the UEN to the index of the UEN in the uen_list.
     mapping(string => uint256) private uen_to_index;
 
-    // Admin list contract address.
-    address public admin_list_contract;
-
-    // Contains the list of admins.
-    address[] public admins;
-
     // Add deployer to owner during deployment.
     constructor(address _initialOwner) Ownable(_initialOwner) {
 
@@ -49,12 +43,11 @@ contract uen_management is Ownable {
         return uen_list;
     }
 
-    /* Add UEN and name to the list. This is an admin only function. 
+    /* Add UEN and name to the list. This is an onlyOwner function. 
     This accepts 2 arrays as the input, one for the UEN and one for the name. 
     The 2 arrays must have the same length.
     */
     event uen_event(string[] _uens, string _message);
-
     function add_uens(string[] memory _uens, string[] memory _names) external onlyOwner {
         require(_uens.length == _names.length, "Mappings must have the same length");
         for (uint256 i = 0; i < _uens.length; i++) {
@@ -66,7 +59,7 @@ contract uen_management is Ownable {
         emit uen_event(_uens, "UENs added");
     }
 
-    /* Remove UEN and name from the list. This is an admin only function. 
+    /* Remove UEN and name from the list. This is an onlyOwner function. 
     This accepts an array of UENs as the input.
     */
     function remove_uens(string[] memory _uens) external onlyOwner {
@@ -81,7 +74,7 @@ contract uen_management is Ownable {
         emit uen_event(_uens, "UENs removed");
     }
 
-    /* Modify UEN name mapping. This is an admin only function. 
+    /* Modify UEN name mapping. This is an onlyOwner function. 
     This accepts 2 arrays as the input, one for the UEN and one for the name. 
     The 2 arrays must have the same length. 
     It's recommended to use this function instead of removing and adding the UENs again as 

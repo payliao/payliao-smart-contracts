@@ -24,10 +24,8 @@ interface Iuen_management {
 	/*
 	This interface is used to read the UENs from the UEN management contract. 
 	get_name gets the name of the company from the UEN. UEN is the input.
-	get_all_uens gets all the UENs from the UEN management contract.
 	*/
 	function get_name(string memory _uen) external view returns (string memory);
-	function get_all_uens() external view returns (string[] memory);
 }
 
 contract sgdm is ERC20, Ownable {
@@ -62,7 +60,7 @@ contract sgdm is ERC20, Ownable {
 		_;
 	}
 
-	// Function for admins to withdraw tokens from the contract. This is essentially a withdraw function.
+	// Function for owner to withdraw tokens from the contract. This is essentially a withdraw function.
 	function admin_withdraw(address _to, uint256 _amount) external onlyOwner returns (bool) {
 		require(_to != address(0), "Withdraw to the zero address");
 		
@@ -86,6 +84,16 @@ contract sgdm is ERC20, Ownable {
 	// Balance of UEN
 	function balance_of_uen(string memory _uen) external view returns (uint256) {
 		return uen_to_balance[_uen];
+	}
+
+	// Change UEN management contract address. This is an onlyOwner function. This accepts the new address as the input.
+	function change_uen_management_contract_address(address _new_uen_management_contract_address) external onlyOwner {
+		uen_management_contract = Iuen_management(_new_uen_management_contract_address);
+	}
+
+	// Change whitelist management contract address. This is an onlyOwner function. This accepts the new address as the input.
+	function change_whitelist_management_contract_address(address _new_whitelist_management_contract_address) external onlyOwner {
+		whitelist_contract = Iwhitelist(_new_whitelist_management_contract_address);
 	}
 
 	/* 
