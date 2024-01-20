@@ -34,14 +34,17 @@ The UEN script is meant to grab the UEN from [data.gov.sg]([data.gov.sg](https:/
 #### UEN Grabber
 1. Under construction
 
-## Contracts (Ethereum Sepolia)
-* SGDk: `0xa462f79a8c09a0770614140B9f53Ebc9fD8413b5`
-* UEN Management (UEN Database): `0x228dfCFf73CcF0a65034aA55621122a5aaD49FE7`
-  * Admin Management of UEN Management: `0x0500982F88Cb1d6eDf1F5aa103c1d60938111330`
-* Whitelist: `0xeC6a51D2025234A1fd6F81EddC383c17C1c95A21`
-  * Admin Management of Whitelist: `0x7ED28E99C8eA2D010d51daEd5526378Fe73A26B1`
-* SGDm: `0x1F11B837513dF2F3e17D5b017f83C5c17C76261f`
-  * Admin Management of SGDm: `0xD51B80cCA2e8C961f6bEd37882c0570C4891f8f8`
+## Contracts (Polygon Mumbai)
+* SGDk: `0xDF20A17667D318A457FF7E720E6960c558c22214`
+* UEN Management (UEN Database): `0x0509dA39A940E07D6E8D1948c405C38563a53Ae8`
+* Whitelist: `0xDeC27e88C7fbbA4E5DB2D079503C03D2578Ce1A3`
+* SGDm: `0xa462f79a8c09a0770614140B9f53Ebc9fD8413b5`
+
+## Contracts (Sepolia)
+* SGDk: `0x6A9B2bb78458a8b6054EB5ca9EbBBED449A25292`
+* UEN Management (UEN Database): `0x2a3c31365C4270355FF372311bE25F1cBB39129c`
+* Whitelist: `0x7F4a89c710484D01F6CB6A191f5F2A31a048ce07`
+* SGDm: `0x899a5bfaBEcE65dAd619B2c7a5b28fd9314D96a6`
 
 ### Contract constructors (under construction)
 #### sgdm.sol

@@ -9,6 +9,11 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "_uen_management_contract_address",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
 						"name": "_initialOwner",
 						"type": "address"
 					}
@@ -68,75 +73,37 @@
 					},
 					{
 						"indexed": false,
+						"internalType": "uint256",
+						"name": "_timestamp",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_caller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
 						"internalType": "string",
-						"name": "_message",
+						"name": "_action",
 						"type": "string"
 					}
 				],
-				"name": "uen_event",
+				"name": "whitelist_event",
 				"type": "event"
 			},
 			{
 				"inputs": [
 					{
-						"internalType": "string[]",
-						"name": "_uens",
-						"type": "string[]"
-					},
-					{
-						"internalType": "string[]",
-						"name": "_names",
-						"type": "string[]"
+						"internalType": "address",
+						"name": "_new_uen_list_contract_address",
+						"type": "address"
 					}
 				],
-				"name": "add_uens",
+				"name": "change_uen_list_contract_address",
 				"outputs": [],
 				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "admin_list_contract",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "admins",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "get_all_uens",
-				"outputs": [
-					{
-						"internalType": "string[]",
-						"name": "",
-						"type": "string[]"
-					}
-				],
-				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -147,7 +114,26 @@
 						"type": "string"
 					}
 				],
-				"name": "get_name",
+				"name": "get_uen_to_whitelist",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_whitelist",
+						"type": "address"
+					}
+				],
+				"name": "get_whitelist_to_uen",
 				"outputs": [
 					{
 						"internalType": "string",
@@ -166,12 +152,12 @@
 						"type": "string[]"
 					},
 					{
-						"internalType": "string[]",
-						"name": "_names",
-						"type": "string[]"
+						"internalType": "address[]",
+						"name": "_admins",
+						"type": "address[]"
 					}
 				],
-				"name": "modify_uens",
+				"name": "map_whitelist_to_uen",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -197,7 +183,7 @@
 						"type": "string[]"
 					}
 				],
-				"name": "remove_uens",
+				"name": "remove_whitelist_to_uen_mapping",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -231,6 +217,70 @@
 					}
 				],
 				"name": "uen_list",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "uen_management_contract",
+				"outputs": [
+					{
+						"internalType": "contract Iuen_management",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "uen_management_contract_address",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "uen_to_whitelist",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "whitelist_to_uen",
 				"outputs": [
 					{
 						"internalType": "string",
@@ -277,7 +327,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"uen_management.sol": "uen_management"
+			"whitelist.sol": "whitelist"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -307,12 +357,12 @@
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
 			]
 		},
-		"uen_management.sol": {
-			"keccak256": "0x894c7da0cf6257f56f82484fab55ccef391d0b0339a196e14e22dff56c06dd89",
+		"whitelist.sol": {
+			"keccak256": "0xf6f82b8daccf52ca8a06a0ae2a950012305ca705fe8fd6f68eca2341e1141b45",
 			"license": "Proprietary",
 			"urls": [
-				"bzz-raw://82bc4fec5966f387d7b89b0468bd0ce7220d917104c77cb9157ddd09642aed89",
-				"dweb:/ipfs/QmXAAbF51swRNrSc9iGdZrFBxzu9MD9qNpxVqBd54kHgKw"
+				"bzz-raw://52b724de103ffa610ebac20895ede7b095c2899182fcaeabd1abc03e3090f184",
+				"dweb:/ipfs/QmfQkTKao8wdhp2mNSgsBZewkbJejF3UQ5hUYjWtfqH5ko"
 			]
 		}
 	},

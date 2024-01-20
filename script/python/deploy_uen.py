@@ -1,4 +1,3 @@
-from functools import wraps
 import click
 import os
 import json
@@ -8,28 +7,34 @@ from web3 import Web3, Account
 class deploy_uen_management:
 	def __init__(
 			self,
-			network_rpc: str = "https://rpc-evm-sidechain.xrpl.org",
-			sender: str = "0x1465ef7ce4ee81fdef9e854e51b97013c1ff740dfd494ddbbb60176c999f581f", # ALL WATCHES PTE LTD admin account
-			instance_address: str = "0x228dfCFf73CcF0a65034aA55621122a5aaD49FE7",
+			network_rpc: str = "https://sepolia.infura.io/v3/eff4f40e64214fec8abe2ce33331c3f8",
+			# network_rpc: str = "https://rpc-mumbai.maticvigil.com/",
+			# network_rpc: str = "https://polygon-mumbai.infura.io/v3/eff4f40e64214fec8abe2ce33331c3f8",
+			sender: str = "0x129e303eec3e6b6ddbb8dd668816f4f79bdd9679923eb78d56f23792d084d111", # AGZ FOOD PTE LTD admin account
+			instance_address: str = "0x2a3c31365C4270355FF372311bE25F1cBB39129c",
 			abi_path: str = "../../abi/uen_management.json",
-			limit: int = 200,
+			limit: int = 5,
 			use_sample: bool = True,
 			automatic: bool = True,
 		):
 
+		self.network_rpc = network_rpc
+		self.sender = sender
+
 		with open(abi_path, "r") as f:
 			self.abi = json.load(f)["abi"]
 
-		self.web3 = Web3(Web3.HTTPProvider(network_rpc))
+		self.web3 = Web3(Web3.HTTPProvider(self.network_rpc))
 		self.instance = self.web3.eth.contract(address=instance_address, abi=self.abi)
 		self.automatic = automatic
 		self.limit = limit
-		self.account = Account.from_key(sender)
+		self.account = Account.from_key(self.sender)
 		self.use_sample = use_sample
 		self.local_uen_list: dict = {}
 		self.uen_list_on_contract: list = []
 
 		self.network_check()
+		click.echo("Using account: " + self.account.address)
 		
 		if self.use_sample:
 			click.echo("Using sample data.")
@@ -65,20 +70,23 @@ class deploy_uen_management:
 
 				# Build a transaction
 				transaction = self.instance.functions.add_uens(uen_list_to_push, name_list_to_push).build_transaction({
-					"value": 0,
+					"from": self.account.address,
+					# "to": self.instance.address,
+					# "value": 0,
 
-					'gas': 2100000000,
-					'maxFeePerGas': 10000000000000000000000,
-					'maxPriorityFeePerGas': 100000000000000000000,
+					'gas': 30000000,
+					'maxFeePerGas': 3000000,
+					'maxPriorityFeePerGas': 1000000,
 
 					"nonce": self.web3.eth.get_transaction_count(self.account.address),
 					# "chainId": self.web3.eth.chain_id,
 				})
-
+				click.echo("Nonce: " + str(transaction["nonce"]))
 				signed_transaction = self.account.sign_transaction(transaction)
 				tx_hash = self.web3.eth.send_raw_transaction(signed_transaction.rawTransaction)
+				click.echo(f"Transaction pending: {tx_hash.hex()}")
 				self.web3.eth.wait_for_transaction_receipt(tx_hash)
-				click.echo(f"Transaction sent: {tx_hash.hex()}")
+				click.echo(f"Transaction succeeded: {tx_hash.hex()}")
 
 			except KeyboardInterrupt:
 				click.echo("Keyboard interrupt detected, stopping the upload process.")
@@ -166,5 +174,5 @@ class deploy_uen_management:
 		click.echo(f"You are connected to EVM network with ID '{chain_id}'.")
 
 if __name__ == "__main__":
-	instance = deploy_uen_management(automatic=False, use_sample=False)
-	instance.get_all_uen()
+	instance = deploy_uen_management(automatic=True, use_sample=True)
+	# print(instance.get_all_uen())

@@ -49,32 +49,11 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"add_uens(string[],string[])": "f9b378c2",
 			"get_all_uens()": "b3d6da6e",
-			"get_name(string)": "a8f5d7a6",
-			"modify_uens(string[],string[])": "9926aa34",
-			"remove_uens(string[])": "35b13db2"
+			"get_name(string)": "a8f5d7a6"
 		}
 	},
 	"abi": [
-		{
-			"inputs": [
-				{
-					"internalType": "string[]",
-					"name": "_uens",
-					"type": "string[]"
-				},
-				{
-					"internalType": "string[]",
-					"name": "_names",
-					"type": "string[]"
-				}
-			],
-			"name": "add_uens",
-			"outputs": [],
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
 		{
 			"inputs": [],
 			"name": "get_all_uens",
@@ -105,37 +84,6 @@
 				}
 			],
 			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"inputs": [
-				{
-					"internalType": "string[]",
-					"name": "_uens",
-					"type": "string[]"
-				},
-				{
-					"internalType": "string[]",
-					"name": "_names",
-					"type": "string[]"
-				}
-			],
-			"name": "modify_uens",
-			"outputs": [],
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"inputs": [
-				{
-					"internalType": "string[]",
-					"name": "_uens",
-					"type": "string[]"
-				}
-			],
-			"name": "remove_uens",
-			"outputs": [],
-			"stateMutability": "nonpayable",
 			"type": "function"
 		}
 	]

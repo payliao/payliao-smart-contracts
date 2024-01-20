@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "sgqr-pro-max-python"
+name = "payliao-python"
 version = "0.1.0"
 description = ""
 authors = ["Xue Yao <9745649+xy-tech@users.noreply.github.com>"]

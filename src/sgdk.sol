@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Proprietary
 pragma solidity 0.8.22;
 
-import "openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract sgdk is ERC20{
 	
