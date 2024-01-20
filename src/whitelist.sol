@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: Proprietary
 pragma solidity 0.8.22;
 
+import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
+
 interface Iuen_management {
 	/*
 	This interface is used to read the UENs from the UEN management contract.
@@ -9,30 +11,23 @@ interface Iuen_management {
 	function get_all_uens() external view returns (string[] memory);
 }
 
-interface Iadmin_management {
-	function get_admins() external view returns (address[] memory);
-}
-
 interface Iwhitelist {
 	/*
 	This interface describes all the function in the whitelist contract.
 	*/
 	function get_uen_to_whitelist(string memory _uen) external view returns (address);
 	function get_whitelist_to_uen(address _whitelist) external view returns (string memory);
-	function get_admins() external view returns (address[] memory);
-	function change_admin_list_contract_address(address _new_admin_list_contract_address) external;
 	function change_uen_list_contract_address(address _new_uen_list_contract_address) external;
 	function map_whitelist_to_uen(string[] memory _uens, address[] memory _admins) external;
 	function remove_whitelist_to_uen_mapping(string[] memory _uens) external;
 }
 
-contract whitelist {
+contract whitelist is Ownable{
 	/*
 	This contract enables merchants to onboard for withdrawal.
 	This refers to 2 other contracts, one for the list of UENs, and another for the list of admins that can control the onboarding process in this contract.
 	The admin can add a whitelisted address to a specific UENs, and only that address can withdraw for that UEN.
 	TODO: Add indexed to emitted events.
-	TODO: Replace admin contract with a proper access control contract.
 	*/
 
 	// Address of the UEN management contract.
@@ -40,16 +35,8 @@ contract whitelist {
 	// Interface of the UEN management contract.
 	Iuen_management public uen_management_contract;
 
-	// Address of the admin management contract.
-	address public admin_management_contract_address;
-	// Interface of the admin management contract.
-	Iadmin_management public admin_management_contract;
-
 	// List of UENs
 	string[] public uen_list;
-
-	// Contains the list of admins.
-	address[] public admins;
 
 	// Contains the UEN to whitelist mapping
 	/* 
@@ -61,7 +48,7 @@ contract whitelist {
 	// We need a whitelist to UEN mapping as well to comply with ERC20 standard.
 	mapping (address => string) public whitelist_to_uen;
 
-	constructor (address _uen_management_contract_address, address _admin_management_contract_address) {
+	constructor (address _uen_management_contract_address, address _initialOwner) Ownable(_initialOwner) {
 		/*
 		Constructor: 
 		Set the UEN management contract address.
@@ -73,34 +60,11 @@ contract whitelist {
 		uen_management_contract_address = _uen_management_contract_address;
 		uen_management_contract = Iuen_management(_uen_management_contract_address);
 		uen_list = uen_management_contract.get_all_uens();
-
-		admin_management_contract_address = _admin_management_contract_address;
-		admin_management_contract = Iadmin_management(_admin_management_contract_address);
-		admins = admin_management_contract.get_admins();
 	}
 
 	// Update the uen_list everytime a function is called. This is a modifier which is called before a function call.
 	modifier update_uen_list_and_check_uen() {
 		uen_list = uen_management_contract.get_all_uens();
-		_;
-	}
-
-	// Update the admin list everytime a function is called. This is a modifier which is called before a function call.
-	modifier update_admin_list() {
-		admins = admin_management_contract.get_admins();
-		_;
-	}
-
-	// Check if the caller is an admin. This is a modifier which is called before a function call. This will prevent non-admins from calling the function.
-	modifier only_admin() {
-		bool is_owner = false;
-		for (uint i = 0; i < admins.length; i++) {
-			if (msg.sender == admins[i]) {
-				is_owner = true;
-				break;
-			}
-		}
-		require(is_owner, "Only admins can call this function");
 		_;
 	}
 
@@ -114,26 +78,11 @@ contract whitelist {
 		return whitelist_to_uen[_whitelist];
 	}
 
-	// Get list of admins. This is a public function.
-	function get_admins() public view returns (address[] memory) {
-		return admins;
-	}
-
-	// Change admin list contract address. This is an admin only function. This accepts the new address as the input.
-	// Two functions are called before the mapping is done:
-	// 1. update_admin_list, which updates the admin list.
-	// 2. only_admin, which checks if the caller is an admin.
-	function change_admin_list_contract_address(address _new_admin_list_contract_address) external update_admin_list only_admin {
-		admin_management_contract_address = _new_admin_list_contract_address;
-		admin_management_contract = Iadmin_management(_new_admin_list_contract_address);
-		admins = admin_management_contract.get_admins();
-	}
-
 	// Change UEN list contract address. This is an admin only function. This accepts the new address as the input.
 	// Two functions are called before the mapping is done:
 	// 1. update_admin_list, which updates the admin list.
 	// 2. only_admin, which checks if the caller is an admin.
-	function change_uen_list_contract_address(address _new_uen_list_contract_address) external update_admin_list only_admin {
+	function change_uen_list_contract_address(address _new_uen_list_contract_address) external onlyOwner {
 		uen_management_contract_address = _new_uen_list_contract_address;
 		uen_management_contract = Iuen_management(_new_uen_list_contract_address);
 		uen_list = uen_management_contract.get_all_uens();
@@ -149,7 +98,7 @@ contract whitelist {
 	3. update_uen_list_and_check_uen, which updates the UEN list and checks if the UEN exists in the UEN management contract.
 	*/
 	event whitelist_event(string[] _uens, uint _timestamp, address _caller, string _action);
-	function map_whitelist_to_uen(string[] memory _uens, address[] memory _admins) external update_admin_list only_admin update_uen_list_and_check_uen {
+	function map_whitelist_to_uen(string[] memory _uens, address[] memory _admins) external onlyOwner update_uen_list_and_check_uen {
 		require(_uens.length == _admins.length, "Mappings must have the same length");
 		for (uint i = 0; i < _uens.length; i++) {
 			bool uen_exists = false;
@@ -172,7 +121,7 @@ contract whitelist {
 	2. only_admin, which checks if the caller is an admin.
 	3. update_uen_list_and_check_uen, which updates the UEN list and checks if the UEN exists in the UEN management contract.
 	*/
-	function remove_whitelist_to_uen_mapping(string[] memory _uens) external update_admin_list only_admin update_uen_list_and_check_uen {
+	function remove_whitelist_to_uen_mapping(string[] memory _uens) external onlyOwner update_uen_list_and_check_uen {
 		for (uint i = 0; i < _uens.length; i++) {
 			delete uen_to_whitelist[_uens[i]];
 			delete whitelist_to_uen[uen_to_whitelist[_uens[i]]];
