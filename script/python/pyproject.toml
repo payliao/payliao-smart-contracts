@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "sgqr-pro-max-python"
+version = "0.1.0"
+description = ""
+authors = ["Xue Yao <9745649+xy-tech@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">3.9, <3.11"
+requests = ">=2.28.1"
+web3 = ">=5.31.3"
+ape-alchemy = "^0.6.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

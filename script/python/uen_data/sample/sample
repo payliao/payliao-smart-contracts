@@ -1,0 +1,37 @@
+[
+    {
+        "uen": "00292400E",
+        "entity_name": "UNIVERSAL SHOE STORE",
+        "entity_status_description": "na"
+    },
+    {
+        "uen": "00467500B",
+        "entity_name": "UNITED BRUSH MANUFACTURING COMPANY",
+        "entity_status_description": "na"
+    },
+    {
+        "uen": "00670200K",
+        "entity_name": "UNITED CONSTRUCTION SERVICE",
+        "entity_status_description": "Live"
+    },
+    {
+        "uen": "00741400E",
+        "entity_name": "UNIVERSAL TRADING COMPANY",
+        "entity_status_description": "na"
+    },
+    {
+        "uen": "00885400M",
+        "entity_name": "UNANI MEDICAL HALL",
+        "entity_status_description": "Live"
+    },
+    {
+        "uen": "00886400D",
+        "entity_name": "UNION MERCHANT TAILOR COMPANY",
+        "entity_status_description": "na"
+    },
+    {
+        "uen": "00943700B",
+        "entity_name": "UNITED CLINIC",
+        "entity_status_description": "Live"
+    }
+]

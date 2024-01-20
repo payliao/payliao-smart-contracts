@@ -1,0 +1,778 @@
+{
+    "code": 0,
+    "data": {
+        "datasetId": "d_af2042c77ffaf0db5d75561ce9ef5688",
+        "createdAt": "2017-06-26T19:01:08+08:00",
+        "name": "ACRA Information on Corporate Entities ('W')",
+        "description": "This file contains information on corporate entities that begin with the letter \"W\".",
+        "format": "CSV",
+        "lastUpdatedAt": "2023-10-20T17:45:19+08:00",
+        "managedBy": "Accounting and Corporate Regulatory Authority",
+        "coverageStart": "2023-01-16T08:00:00+08:00",
+        "coverageEnd": "2023-01-16T08:00:00+08:00",
+        "contactEmails": [
+            "admin@data.gov.sg"
+        ],
+        "columnMetadata": {
+            "order": [
+                "c_57hvrvi4jyoeg155j0evzxl40",
+                "c_6tohbbpux3t1u05gvv4ysmgj1",
+                "c_anpyjuxg0nb0lsooeh3kxtaid",
+                "c_8zmv9y8cm3epmqueeh64epd8l",
+                "c_e3h5xmuxixwv25z7zpw9osryx",
+                "c_9f8wnft1tpmdzb4f8lt4yezil",
+                "c_p40on6vgmldq76b7djee7yq3",
+                "c_e2gamgrhb0j6xwcypyc73fkah",
+                "c_c06wtf9kbptrrxn8yv3e2gldx",
+                "c_5rjdagb1brwczys6lpw15pefh",
+                "c_drnfaoe9upl9gx9zo68tvyunb",
+                "c_53r8nzinmg9ny57f62jfpnb6a",
+                "c_cx83jk12htzpkr61kyn4k899z",
+                "c_bamj4wzkxbec0b848hv99m6cv",
+                "c_5l9uttx1wxudeti4gdlhzv1tm",
+                "c_wr8znbe67ww062xyxdjv5tqk",
+                "c_8vcpxcagipgvfl2wtthi8omw",
+                "c_b7kpaf2h9opdxatw96im446dv",
+                "c_1yfeyp0iu44dju6ct49u6zb6h",
+                "c_1it5hnbxo80vfjoo0po6otea9",
+                "c_egs3wf0ja26x5cxuwuzr11g7a",
+                "c_dxxsityak1gs1fjwra9dd15gx",
+                "c_1m6r06vxifx91y1avn2ezor55",
+                "c_culmffukue7fp134wqxpvo71u",
+                "c_8soijdnvm7fo51ph8abir2ei3",
+                "c_n69t3ja0n7976vivc77avyzd",
+                "c_9up2nctgob0y05rj3ws2sbq8i",
+                "c_8a6celd5w13xx87h9vge3az97",
+                "c_e8xmqx2kjmkzef03ydol2aikz",
+                "c_59xrefrdjh35q2lvd6d63pm5x",
+                "c_f2z2e7vs0n3bu4e1ofzxg2mmt",
+                "c_du9xuwr849fl7hw93wg32qcfc",
+                "c_chi3wom5obfkuqmkjcerbh6xg",
+                "c_evkybx6rnf72on8u52tehf095",
+                "c_803w2a1vot6pkhj4skp5dr31o",
+                "c_emfj3e2fjtvfna1od789nxby3",
+                "c_f0ji37bgjsdv7d7iabojd55oa",
+                "c_9gegth5oazqjzlsz2qfmop41s",
+                "c_7nx8ez0nk55aq42tt4uh9kwfl",
+                "c_2twlpccy5hjv716gczcq02lnr",
+                "c_kv6ycr4lpvqjfzzmicrayxu3",
+                "c_6hvejj8cf6mo49fnykmrfr9wv",
+                "c_8225l6xgl6jxp2154kiyawq4n",
+                "c_29g5dqorz34e2xptel2txkl1f",
+                "c_bpiez9490eh42rmprwrvcmlmc",
+                "c_34xo6n7krd5qj9zrs9txwtzth",
+                "c_4p40yzyxow2iprtgct883ii0c",
+                "c_cii4p26tu85zxid0rqb9b6pya",
+                "c_01vebz558agaffm9flypds36v",
+                "c_557rg4x4pd7w9rkzb3m7vvhyb",
+                "c_8dfmcje06ghsoxg78hu5y7aax",
+                "c_f3gr151yqoij4lbq0kmzqzfyt",
+                "c_4m81709ho0a6h7tygxic2mpgb",
+                "c_ntdx2pa24agjm2kmxv3to0ff",
+                "c_bajre8gvdq59rnxx1euwytjf6",
+                "c_8i79djcgp1n0bi0u0p13v9iti",
+                "c_8e1oihz2w9877dfjyhd5x1dmz",
+                "c_6wugkw7sl4xx1o8hflvguj45u",
+                "c_d3401slftn8vvhi9sdvikrksl",
+                "c_c3ehrgt4deohfm3m5b42utb1l",
+                "c_2mv4nxwtgqgh58fsvgdnuog77",
+                "c_8n26lnqq3rizszepk00zteepg",
+                "c_eb3z7pmo1u0ytsb3ydxkjriez",
+                "c_av4t6w8vvvg23970qy0fdz8r9",
+                "c_c9utr3a3845y8xmqq15wbo7fq",
+                "c_9itypk7mva0647shct694uuw8",
+                "c_5x3kizz7flmh5a58dluo4iutz",
+                "c_ao6u2bhghpaudc7yohljzazfy",
+                "c_15a5ududtj1otmowmxu05mhbs",
+                "c_1yx7nn53rf3mg7ty9fs3zxo8p",
+                "c_c0xa6m7d909uopshn273uv6ao",
+                "c_btuyscd1d7r3zmw8tsuv07pua",
+                "c_nzo00isemt24ltfqvpzfjhk8",
+                "c_6ljjvpviqgvuk84s8b4sz4lc4",
+                "c_dc7ln0b8io1kgxing1l8rqnxs",
+                "c_6o3rutizuogmf1q4hpicy2mrn",
+                "c_ee0t5dlz8n5vb6ix5ld7zlz8i",
+                "c_bw5idj09zy1qzighoi0uzcxvv",
+                "c_3agqvwmgutcl0ez9wdfej8do9",
+                "c_6kfwpo71be4chm54lm9zkqrzg",
+                "c_5zxic09o7ijz4hp1wlqo77tf8",
+                "c_z3oo14d5vjvrh160o5084pz5",
+                "c_96g92mgwencrb7rw7piqd5ucv",
+                "c_a1ti5ofnyaw069g6lkxs5q02v",
+                "c_emul26qszw1mtu1gn01g42sxr",
+                "c_e38gxwzul0pxrnq938g6n8nyq",
+                "c_arc7xbaxt57dfnnthxreds2o",
+                "c_9vojo7jwspfltx8bec2lpzddd",
+                "c_3ff8054f5hk2pl462bhwos95e",
+                "c_9bbcuj0b5hmzhhmac0jk5088w",
+                "c_90kcec4yqouyc94wjyhct507j",
+                "c_58iu7yhs1prthh7oy130ij0wv",
+                "c_ecjouunoxhoaxtsrbm5nvj5de",
+                "c_e403sln7p71u4xaktwnw8ghv1"
+            ],
+            "map": {
+                "c_57hvrvi4jyoeg155j0evzxl40": "uen",
+                "c_6tohbbpux3t1u05gvv4ysmgj1": "issuance_agency_id",
+                "c_anpyjuxg0nb0lsooeh3kxtaid": "entity_name",
+                "c_8zmv9y8cm3epmqueeh64epd8l": "entity_type_description",
+                "c_e3h5xmuxixwv25z7zpw9osryx": "business_constitution_description",
+                "c_9f8wnft1tpmdzb4f8lt4yezil": "company_type_description",
+                "c_p40on6vgmldq76b7djee7yq3": "paf_constitution_description",
+                "c_e2gamgrhb0j6xwcypyc73fkah": "entity_status_description",
+                "c_c06wtf9kbptrrxn8yv3e2gldx": "registration_incorporation_date",
+                "c_5rjdagb1brwczys6lpw15pefh": "uen_issue_date",
+                "c_drnfaoe9upl9gx9zo68tvyunb": "address_type",
+                "c_53r8nzinmg9ny57f62jfpnb6a": "block",
+                "c_cx83jk12htzpkr61kyn4k899z": "street_name",
+                "c_bamj4wzkxbec0b848hv99m6cv": "level_no",
+                "c_5l9uttx1wxudeti4gdlhzv1tm": "unit_no",
+                "c_wr8znbe67ww062xyxdjv5tqk": "building_name",
+                "c_8vcpxcagipgvfl2wtthi8omw": "postal_code",
+                "c_b7kpaf2h9opdxatw96im446dv": "other_address_line1",
+                "c_1yfeyp0iu44dju6ct49u6zb6h": "other_address_line2",
+                "c_1it5hnbxo80vfjoo0po6otea9": "account_due_date",
+                "c_egs3wf0ja26x5cxuwuzr11g7a": "annual_return_date",
+                "c_dxxsityak1gs1fjwra9dd15gx": "no_of_charges",
+                "c_1m6r06vxifx91y1avn2ezor55": "primary_ssic_code",
+                "c_culmffukue7fp134wqxpvo71u": "primary_ssic_description",
+                "c_8soijdnvm7fo51ph8abir2ei3": "primary_user_described_activity",
+                "c_n69t3ja0n7976vivc77avyzd": "secondary_ssic_code",
+                "c_9up2nctgob0y05rj3ws2sbq8i": "secondary_ssic_description",
+                "c_8a6celd5w13xx87h9vge3az97": "secondary_user_described_activity",
+                "c_e8xmqx2kjmkzef03ydol2aikz": "no_of_officers",
+                "c_59xrefrdjh35q2lvd6d63pm5x": "former_entity_name1",
+                "c_f2z2e7vs0n3bu4e1ofzxg2mmt": "former_entity_name2",
+                "c_du9xuwr849fl7hw93wg32qcfc": "former_entity_name3",
+                "c_chi3wom5obfkuqmkjcerbh6xg": "former_entity_name4",
+                "c_evkybx6rnf72on8u52tehf095": "former_entity_name5",
+                "c_803w2a1vot6pkhj4skp5dr31o": "former_entity_name6",
+                "c_emfj3e2fjtvfna1od789nxby3": "former_entity_name7",
+                "c_f0ji37bgjsdv7d7iabojd55oa": "former_entity_name8",
+                "c_9gegth5oazqjzlsz2qfmop41s": "former_entity_name9",
+                "c_7nx8ez0nk55aq42tt4uh9kwfl": "former_entity_name10",
+                "c_2twlpccy5hjv716gczcq02lnr": "former_entity_name11",
+                "c_kv6ycr4lpvqjfzzmicrayxu3": "former_entity_name12",
+                "c_6hvejj8cf6mo49fnykmrfr9wv": "former_entity_name13",
+                "c_8225l6xgl6jxp2154kiyawq4n": "former_entity_name14",
+                "c_29g5dqorz34e2xptel2txkl1f": "former_entity_name15",
+                "c_bpiez9490eh42rmprwrvcmlmc": "paid_up_capital1_currency",
+                "c_34xo6n7krd5qj9zrs9txwtzth": "paid_up_capital1_ordinary",
+                "c_4p40yzyxow2iprtgct883ii0c": "paid_up_capital1_preference",
+                "c_cii4p26tu85zxid0rqb9b6pya": "paid_up_capital1_others",
+                "c_01vebz558agaffm9flypds36v": "paid_up_capital2_currency",
+                "c_557rg4x4pd7w9rkzb3m7vvhyb": "paid_up_capital2_ordinary",
+                "c_8dfmcje06ghsoxg78hu5y7aax": "paid_up_capital2_preference",
+                "c_f3gr151yqoij4lbq0kmzqzfyt": "paid_up_capital2_others",
+                "c_4m81709ho0a6h7tygxic2mpgb": "paid_up_capital3_currency",
+                "c_ntdx2pa24agjm2kmxv3to0ff": "paid_up_capital3_ordinary",
+                "c_bajre8gvdq59rnxx1euwytjf6": "paid_up_capital3_preference",
+                "c_8i79djcgp1n0bi0u0p13v9iti": "paid_up_capital3_others",
+                "c_8e1oihz2w9877dfjyhd5x1dmz": "paid_up_capital4_currency",
+                "c_6wugkw7sl4xx1o8hflvguj45u": "paid_up_capital4_ordinary",
+                "c_d3401slftn8vvhi9sdvikrksl": "paid_up_capital4_preference",
+                "c_c3ehrgt4deohfm3m5b42utb1l": "paid_up_capital4_others",
+                "c_2mv4nxwtgqgh58fsvgdnuog77": "paid_up_capital5_currency",
+                "c_8n26lnqq3rizszepk00zteepg": "paid_up_capital5_ordinary",
+                "c_eb3z7pmo1u0ytsb3ydxkjriez": "paid_up_capital5_preference",
+                "c_av4t6w8vvvg23970qy0fdz8r9": "paid_up_capital5_others",
+                "c_c9utr3a3845y8xmqq15wbo7fq": "paid_up_capital6_currency",
+                "c_9itypk7mva0647shct694uuw8": "paid_up_capital6_ordinary",
+                "c_5x3kizz7flmh5a58dluo4iutz": "paid_up_capital6_preference",
+                "c_ao6u2bhghpaudc7yohljzazfy": "paid_up_capital6_others",
+                "c_15a5ududtj1otmowmxu05mhbs": "paid_up_capital7_currency",
+                "c_1yx7nn53rf3mg7ty9fs3zxo8p": "paid_up_capital7_ordinary",
+                "c_c0xa6m7d909uopshn273uv6ao": "paid_up_capital7_preference",
+                "c_btuyscd1d7r3zmw8tsuv07pua": "paid_up_capital7_others",
+                "c_nzo00isemt24ltfqvpzfjhk8": "paid_up_capital8_currency",
+                "c_6ljjvpviqgvuk84s8b4sz4lc4": "paid_up_capital8_ordinary",
+                "c_dc7ln0b8io1kgxing1l8rqnxs": "paid_up_capital8_preference",
+                "c_6o3rutizuogmf1q4hpicy2mrn": "paid_up_capital8_others",
+                "c_ee0t5dlz8n5vb6ix5ld7zlz8i": "paid_up_capital9_currency",
+                "c_bw5idj09zy1qzighoi0uzcxvv": "paid_up_capital9_ordinary",
+                "c_3agqvwmgutcl0ez9wdfej8do9": "paid_up_capital9_preference",
+                "c_6kfwpo71be4chm54lm9zkqrzg": "paid_up_capital9_others",
+                "c_5zxic09o7ijz4hp1wlqo77tf8": "paid_up_capital10_currency",
+                "c_z3oo14d5vjvrh160o5084pz5": "paid_up_capital10_ordinary",
+                "c_96g92mgwencrb7rw7piqd5ucv": "paid_up_capital10_preference",
+                "c_a1ti5ofnyaw069g6lkxs5q02v": "paid_up_capital10_others",
+                "c_emul26qszw1mtu1gn01g42sxr": "uen_of_audit_firm1",
+                "c_e38gxwzul0pxrnq938g6n8nyq": "name_of_audit_firm1",
+                "c_arc7xbaxt57dfnnthxreds2o": "uen_of_audit_firm2",
+                "c_9vojo7jwspfltx8bec2lpzddd": "name_of_audit_firm2",
+                "c_3ff8054f5hk2pl462bhwos95e": "uen_of_audit_firm3",
+                "c_9bbcuj0b5hmzhhmac0jk5088w": "name_of_audit_firm3",
+                "c_90kcec4yqouyc94wjyhct507j": "uen_of_audit_firm4",
+                "c_58iu7yhs1prthh7oy130ij0wv": "name_of_audit_firm4",
+                "c_ecjouunoxhoaxtsrbm5nvj5de": "uen_of_audit_firm5",
+                "c_e403sln7p71u4xaktwnw8ghv1": "name_of_audit_firm5"
+            },
+            "metaMapping": {
+                "c_57hvrvi4jyoeg155j0evzxl40": {
+                    "name": "uen",
+                    "columnTitle": "Unique entity number",
+                    "dataType": "Text",
+                    "index": "0"
+                },
+                "c_6tohbbpux3t1u05gvv4ysmgj1": {
+                    "name": "issuance_agency_id",
+                    "columnTitle": "Issuance agency id",
+                    "dataType": "Text",
+                    "index": "1"
+                },
+                "c_anpyjuxg0nb0lsooeh3kxtaid": {
+                    "name": "entity_name",
+                    "columnTitle": "Entity name",
+                    "dataType": "Text",
+                    "index": "2"
+                },
+                "c_8zmv9y8cm3epmqueeh64epd8l": {
+                    "name": "entity_type_description",
+                    "columnTitle": "Entity type description",
+                    "dataType": "Text",
+                    "index": "3"
+                },
+                "c_e3h5xmuxixwv25z7zpw9osryx": {
+                    "name": "business_constitution_description",
+                    "columnTitle": "Business constitution description",
+                    "dataType": "Text",
+                    "index": "4"
+                },
+                "c_9f8wnft1tpmdzb4f8lt4yezil": {
+                    "name": "company_type_description",
+                    "columnTitle": "Company type description",
+                    "dataType": "Text",
+                    "index": "5"
+                },
+                "c_p40on6vgmldq76b7djee7yq3": {
+                    "name": "paf_constitution_description",
+                    "columnTitle": "Paf constitution description",
+                    "dataType": "Text",
+                    "index": "6"
+                },
+                "c_e2gamgrhb0j6xwcypyc73fkah": {
+                    "name": "entity_status_description",
+                    "columnTitle": "Entity status description",
+                    "dataType": "Text",
+                    "index": "7"
+                },
+                "c_c06wtf9kbptrrxn8yv3e2gldx": {
+                    "name": "registration_incorporation_date",
+                    "columnTitle": "Registration incorporation date",
+                    "dataType": "Text",
+                    "index": "8"
+                },
+                "c_5rjdagb1brwczys6lpw15pefh": {
+                    "name": "uen_issue_date",
+                    "columnTitle": "Uen issue date",
+                    "dataType": "Text",
+                    "index": "9"
+                },
+                "c_drnfaoe9upl9gx9zo68tvyunb": {
+                    "name": "address_type",
+                    "columnTitle": "Address type",
+                    "dataType": "Text",
+                    "index": "10"
+                },
+                "c_53r8nzinmg9ny57f62jfpnb6a": {
+                    "name": "block",
+                    "columnTitle": "Block",
+                    "dataType": "Text",
+                    "index": "11"
+                },
+                "c_cx83jk12htzpkr61kyn4k899z": {
+                    "name": "street_name",
+                    "columnTitle": "Street name",
+                    "dataType": "Text",
+                    "index": "12"
+                },
+                "c_bamj4wzkxbec0b848hv99m6cv": {
+                    "name": "level_no",
+                    "columnTitle": "Level no",
+                    "dataType": "Text",
+                    "index": "13"
+                },
+                "c_5l9uttx1wxudeti4gdlhzv1tm": {
+                    "name": "unit_no",
+                    "columnTitle": "Unit no",
+                    "dataType": "Text",
+                    "index": "14"
+                },
+                "c_wr8znbe67ww062xyxdjv5tqk": {
+                    "name": "building_name",
+                    "columnTitle": "Building name",
+                    "dataType": "Text",
+                    "index": "15"
+                },
+                "c_8vcpxcagipgvfl2wtthi8omw": {
+                    "name": "postal_code",
+                    "columnTitle": "Postal code",
+                    "dataType": "Text",
+                    "index": "16"
+                },
+                "c_b7kpaf2h9opdxatw96im446dv": {
+                    "name": "other_address_line1",
+                    "columnTitle": "Other address line1",
+                    "dataType": "Text",
+                    "index": "17"
+                },
+                "c_1yfeyp0iu44dju6ct49u6zb6h": {
+                    "name": "other_address_line2",
+                    "columnTitle": "Other address line2",
+                    "dataType": "Text",
+                    "index": "18"
+                },
+                "c_1it5hnbxo80vfjoo0po6otea9": {
+                    "name": "account_due_date",
+                    "columnTitle": "Account due date",
+                    "dataType": "Text",
+                    "index": "19"
+                },
+                "c_egs3wf0ja26x5cxuwuzr11g7a": {
+                    "name": "annual_return_date",
+                    "columnTitle": "Annual return date",
+                    "dataType": "Text",
+                    "index": "20"
+                },
+                "c_dxxsityak1gs1fjwra9dd15gx": {
+                    "name": "no_of_charges",
+                    "columnTitle": "No of charges",
+                    "dataType": "Text",
+                    "index": "21"
+                },
+                "c_1m6r06vxifx91y1avn2ezor55": {
+                    "name": "primary_ssic_code",
+                    "columnTitle": "Primary ssic code",
+                    "dataType": "Text",
+                    "index": "22"
+                },
+                "c_culmffukue7fp134wqxpvo71u": {
+                    "name": "primary_ssic_description",
+                    "columnTitle": "Primary ssic description",
+                    "dataType": "Text",
+                    "index": "23"
+                },
+                "c_8soijdnvm7fo51ph8abir2ei3": {
+                    "name": "primary_user_described_activity",
+                    "columnTitle": "Primary user described activity",
+                    "dataType": "Text",
+                    "index": "24"
+                },
+                "c_n69t3ja0n7976vivc77avyzd": {
+                    "name": "secondary_ssic_code",
+                    "columnTitle": "Secondary ssic code",
+                    "dataType": "Text",
+                    "index": "25"
+                },
+                "c_9up2nctgob0y05rj3ws2sbq8i": {
+                    "name": "secondary_ssic_description",
+                    "columnTitle": "Secondary ssic description",
+                    "dataType": "Text",
+                    "index": "26"
+                },
+                "c_8a6celd5w13xx87h9vge3az97": {
+                    "name": "secondary_user_described_activity",
+                    "columnTitle": "Secondary user described activity",
+                    "dataType": "Text",
+                    "index": "27"
+                },
+                "c_e8xmqx2kjmkzef03ydol2aikz": {
+                    "name": "no_of_officers",
+                    "columnTitle": "No of officers",
+                    "dataType": "Text",
+                    "index": "28"
+                },
+                "c_59xrefrdjh35q2lvd6d63pm5x": {
+                    "name": "former_entity_name1",
+                    "columnTitle": "Former entity name1",
+                    "dataType": "Text",
+                    "index": "29"
+                },
+                "c_f2z2e7vs0n3bu4e1ofzxg2mmt": {
+                    "name": "former_entity_name2",
+                    "columnTitle": "Former entity name2",
+                    "dataType": "Text",
+                    "index": "30"
+                },
+                "c_du9xuwr849fl7hw93wg32qcfc": {
+                    "name": "former_entity_name3",
+                    "columnTitle": "Former entity name3",
+                    "dataType": "Text",
+                    "index": "31"
+                },
+                "c_chi3wom5obfkuqmkjcerbh6xg": {
+                    "name": "former_entity_name4",
+                    "columnTitle": "Former entity name4",
+                    "dataType": "Text",
+                    "index": "32"
+                },
+                "c_evkybx6rnf72on8u52tehf095": {
+                    "name": "former_entity_name5",
+                    "columnTitle": "Former entity name5",
+                    "dataType": "Text",
+                    "index": "33"
+                },
+                "c_803w2a1vot6pkhj4skp5dr31o": {
+                    "name": "former_entity_name6",
+                    "columnTitle": "Former entity name6",
+                    "dataType": "Text",
+                    "index": "34"
+                },
+                "c_emfj3e2fjtvfna1od789nxby3": {
+                    "name": "former_entity_name7",
+                    "columnTitle": "Former entity name7",
+                    "dataType": "Text",
+                    "index": "35"
+                },
+                "c_f0ji37bgjsdv7d7iabojd55oa": {
+                    "name": "former_entity_name8",
+                    "columnTitle": "Former entity name8",
+                    "dataType": "Text",
+                    "index": "36"
+                },
+                "c_9gegth5oazqjzlsz2qfmop41s": {
+                    "name": "former_entity_name9",
+                    "columnTitle": "Former entity name9",
+                    "dataType": "Text",
+                    "index": "37"
+                },
+                "c_7nx8ez0nk55aq42tt4uh9kwfl": {
+                    "name": "former_entity_name10",
+                    "columnTitle": "Former entity name10",
+                    "dataType": "Text",
+                    "index": "38"
+                },
+                "c_2twlpccy5hjv716gczcq02lnr": {
+                    "name": "former_entity_name11",
+                    "columnTitle": "Former entity name11",
+                    "dataType": "Text",
+                    "index": "39"
+                },
+                "c_kv6ycr4lpvqjfzzmicrayxu3": {
+                    "name": "former_entity_name12",
+                    "columnTitle": "Former entity name12",
+                    "dataType": "Text",
+                    "index": "40"
+                },
+                "c_6hvejj8cf6mo49fnykmrfr9wv": {
+                    "name": "former_entity_name13",
+                    "columnTitle": "Former entity name13",
+                    "dataType": "Text",
+                    "index": "41"
+                },
+                "c_8225l6xgl6jxp2154kiyawq4n": {
+                    "name": "former_entity_name14",
+                    "columnTitle": "Former entity name14",
+                    "dataType": "Text",
+                    "index": "42"
+                },
+                "c_29g5dqorz34e2xptel2txkl1f": {
+                    "name": "former_entity_name15",
+                    "columnTitle": "Former entity name15",
+                    "dataType": "Text",
+                    "index": "43"
+                },
+                "c_bpiez9490eh42rmprwrvcmlmc": {
+                    "name": "paid_up_capital1_currency",
+                    "columnTitle": "Paid up capital1 currency",
+                    "dataType": "Text",
+                    "index": "44"
+                },
+                "c_34xo6n7krd5qj9zrs9txwtzth": {
+                    "name": "paid_up_capital1_ordinary",
+                    "columnTitle": "Paid up capital1 ordinary",
+                    "dataType": "Text",
+                    "index": "45"
+                },
+                "c_4p40yzyxow2iprtgct883ii0c": {
+                    "name": "paid_up_capital1_preference",
+                    "columnTitle": "Paid up capital1 preference",
+                    "dataType": "Text",
+                    "index": "46"
+                },
+                "c_cii4p26tu85zxid0rqb9b6pya": {
+                    "name": "paid_up_capital1_others",
+                    "columnTitle": "Paid up capital1 others",
+                    "dataType": "Text",
+                    "index": "47"
+                },
+                "c_01vebz558agaffm9flypds36v": {
+                    "name": "paid_up_capital2_currency",
+                    "columnTitle": "Paid up capital2 currency",
+                    "dataType": "Text",
+                    "index": "48"
+                },
+                "c_557rg4x4pd7w9rkzb3m7vvhyb": {
+                    "name": "paid_up_capital2_ordinary",
+                    "columnTitle": "Paid up capital2 ordinary",
+                    "dataType": "Text",
+                    "index": "49"
+                },
+                "c_8dfmcje06ghsoxg78hu5y7aax": {
+                    "name": "paid_up_capital2_preference",
+                    "columnTitle": "Paid up capital2 preference",
+                    "dataType": "Text",
+                    "index": "50"
+                },
+                "c_f3gr151yqoij4lbq0kmzqzfyt": {
+                    "name": "paid_up_capital2_others",
+                    "columnTitle": "Paid up capital2 others",
+                    "dataType": "Text",
+                    "index": "51"
+                },
+                "c_4m81709ho0a6h7tygxic2mpgb": {
+                    "name": "paid_up_capital3_currency",
+                    "columnTitle": "Paid up capital3 currency",
+                    "dataType": "Text",
+                    "index": "52"
+                },
+                "c_ntdx2pa24agjm2kmxv3to0ff": {
+                    "name": "paid_up_capital3_ordinary",
+                    "columnTitle": "Paid up capital3 ordinary",
+                    "dataType": "Text",
+                    "index": "53"
+                },
+                "c_bajre8gvdq59rnxx1euwytjf6": {
+                    "name": "paid_up_capital3_preference",
+                    "columnTitle": "Paid up capital3 preference",
+                    "dataType": "Text",
+                    "index": "54"
+                },
+                "c_8i79djcgp1n0bi0u0p13v9iti": {
+                    "name": "paid_up_capital3_others",
+                    "columnTitle": "Paid up capital3 others",
+                    "dataType": "Text",
+                    "index": "55"
+                },
+                "c_8e1oihz2w9877dfjyhd5x1dmz": {
+                    "name": "paid_up_capital4_currency",
+                    "columnTitle": "Paid up capital4 currency",
+                    "dataType": "Text",
+                    "index": "56"
+                },
+                "c_6wugkw7sl4xx1o8hflvguj45u": {
+                    "name": "paid_up_capital4_ordinary",
+                    "columnTitle": "Paid up capital4 ordinary",
+                    "dataType": "Text",
+                    "index": "57"
+                },
+                "c_d3401slftn8vvhi9sdvikrksl": {
+                    "name": "paid_up_capital4_preference",
+                    "columnTitle": "Paid up capital4 preference",
+                    "dataType": "Text",
+                    "index": "58"
+                },
+                "c_c3ehrgt4deohfm3m5b42utb1l": {
+                    "name": "paid_up_capital4_others",
+                    "columnTitle": "Paid up capital4 others",
+                    "dataType": "Text",
+                    "index": "59"
+                },
+                "c_2mv4nxwtgqgh58fsvgdnuog77": {
+                    "name": "paid_up_capital5_currency",
+                    "columnTitle": "Paid up capital5 currency",
+                    "dataType": "Text",
+                    "index": "60"
+                },
+                "c_8n26lnqq3rizszepk00zteepg": {
+                    "name": "paid_up_capital5_ordinary",
+                    "columnTitle": "Paid up capital5 ordinary",
+                    "dataType": "Text",
+                    "index": "61"
+                },
+                "c_eb3z7pmo1u0ytsb3ydxkjriez": {
+                    "name": "paid_up_capital5_preference",
+                    "columnTitle": "Paid up capital5 preference",
+                    "dataType": "Text",
+                    "index": "62"
+                },
+                "c_av4t6w8vvvg23970qy0fdz8r9": {
+                    "name": "paid_up_capital5_others",
+                    "columnTitle": "Paid up capital5 others",
+                    "dataType": "Text",
+                    "index": "63"
+                },
+                "c_c9utr3a3845y8xmqq15wbo7fq": {
+                    "name": "paid_up_capital6_currency",
+                    "columnTitle": "Paid up capital6 currency",
+                    "dataType": "Text",
+                    "index": "64"
+                },
+                "c_9itypk7mva0647shct694uuw8": {
+                    "name": "paid_up_capital6_ordinary",
+                    "columnTitle": "Paid up capital6 ordinary",
+                    "dataType": "Text",
+                    "index": "65"
+                },
+                "c_5x3kizz7flmh5a58dluo4iutz": {
+                    "name": "paid_up_capital6_preference",
+                    "columnTitle": "Paid up capital6 preference",
+                    "dataType": "Text",
+                    "index": "66"
+                },
+                "c_ao6u2bhghpaudc7yohljzazfy": {
+                    "name": "paid_up_capital6_others",
+                    "columnTitle": "Paid up capital6 others",
+                    "dataType": "Text",
+                    "index": "67"
+                },
+                "c_15a5ududtj1otmowmxu05mhbs": {
+                    "name": "paid_up_capital7_currency",
+                    "columnTitle": "Paid up capital7 currency",
+                    "dataType": "Text",
+                    "index": "68"
+                },
+                "c_1yx7nn53rf3mg7ty9fs3zxo8p": {
+                    "name": "paid_up_capital7_ordinary",
+                    "columnTitle": "Paid up capital7 ordinary",
+                    "dataType": "Text",
+                    "index": "69"
+                },
+                "c_c0xa6m7d909uopshn273uv6ao": {
+                    "name": "paid_up_capital7_preference",
+                    "columnTitle": "Paid up capital7 preference",
+                    "dataType": "Text",
+                    "index": "70"
+                },
+                "c_btuyscd1d7r3zmw8tsuv07pua": {
+                    "name": "paid_up_capital7_others",
+                    "columnTitle": "Paid up capital7 others",
+                    "dataType": "Text",
+                    "index": "71"
+                },
+                "c_nzo00isemt24ltfqvpzfjhk8": {
+                    "name": "paid_up_capital8_currency",
+                    "columnTitle": "Paid up capital8 currency",
+                    "dataType": "Text",
+                    "index": "72"
+                },
+                "c_6ljjvpviqgvuk84s8b4sz4lc4": {
+                    "name": "paid_up_capital8_ordinary",
+                    "columnTitle": "Paid up capital8 ordinary",
+                    "dataType": "Text",
+                    "index": "73"
+                },
+                "c_dc7ln0b8io1kgxing1l8rqnxs": {
+                    "name": "paid_up_capital8_preference",
+                    "columnTitle": "Paid up capital8 preference",
+                    "dataType": "Text",
+                    "index": "74"
+                },
+                "c_6o3rutizuogmf1q4hpicy2mrn": {
+                    "name": "paid_up_capital8_others",
+                    "columnTitle": "Paid up capital8 others",
+                    "dataType": "Text",
+                    "index": "75"
+                },
+                "c_ee0t5dlz8n5vb6ix5ld7zlz8i": {
+                    "name": "paid_up_capital9_currency",
+                    "columnTitle": "Paid up capital9 currency",
+                    "dataType": "Text",
+                    "index": "76"
+                },
+                "c_bw5idj09zy1qzighoi0uzcxvv": {
+                    "name": "paid_up_capital9_ordinary",
+                    "columnTitle": "Paid up capital9 ordinary",
+                    "dataType": "Text",
+                    "index": "77"
+                },
+                "c_3agqvwmgutcl0ez9wdfej8do9": {
+                    "name": "paid_up_capital9_preference",
+                    "columnTitle": "Paid up capital9 preference",
+                    "dataType": "Text",
+                    "index": "78"
+                },
+                "c_6kfwpo71be4chm54lm9zkqrzg": {
+                    "name": "paid_up_capital9_others",
+                    "columnTitle": "Paid up capital9 others",
+                    "dataType": "Text",
+                    "index": "79"
+                },
+                "c_5zxic09o7ijz4hp1wlqo77tf8": {
+                    "name": "paid_up_capital10_currency",
+                    "columnTitle": "Paid up capital10 currency",
+                    "dataType": "Text",
+                    "index": "80"
+                },
+                "c_z3oo14d5vjvrh160o5084pz5": {
+                    "name": "paid_up_capital10_ordinary",
+                    "columnTitle": "Paid up capital10 ordinary",
+                    "dataType": "Text",
+                    "index": "81"
+                },
+                "c_96g92mgwencrb7rw7piqd5ucv": {
+                    "name": "paid_up_capital10_preference",
+                    "columnTitle": "Paid up capital10 preference",
+                    "dataType": "Text",
+                    "index": "82"
+                },
+                "c_a1ti5ofnyaw069g6lkxs5q02v": {
+                    "name": "paid_up_capital10_others",
+                    "columnTitle": "Paid up capital10 others",
+                    "dataType": "Text",
+                    "index": "83"
+                },
+                "c_emul26qszw1mtu1gn01g42sxr": {
+                    "name": "uen_of_audit_firm1",
+                    "columnTitle": "Uen of audit firm1",
+                    "dataType": "Text",
+                    "index": "84"
+                },
+                "c_e38gxwzul0pxrnq938g6n8nyq": {
+                    "name": "name_of_audit_firm1",
+                    "columnTitle": "Name of audit firm1",
+                    "dataType": "Text",
+                    "index": "85"
+                },
+                "c_arc7xbaxt57dfnnthxreds2o": {
+                    "name": "uen_of_audit_firm2",
+                    "columnTitle": "Uen of audit firm2",
+                    "dataType": "Text",
+                    "index": "86"
+                },
+                "c_9vojo7jwspfltx8bec2lpzddd": {
+                    "name": "name_of_audit_firm2",
+                    "columnTitle": "Name of audit firm2",
+                    "dataType": "Text",
+                    "index": "87"
+                },
+                "c_3ff8054f5hk2pl462bhwos95e": {
+                    "name": "uen_of_audit_firm3",
+                    "columnTitle": "Uen of audit firm3",
+                    "dataType": "Text",
+                    "index": "88"
+                },
+                "c_9bbcuj0b5hmzhhmac0jk5088w": {
+                    "name": "name_of_audit_firm3",
+                    "columnTitle": "Name of audit firm3",
+                    "dataType": "Text",
+                    "index": "89"
+                },
+                "c_90kcec4yqouyc94wjyhct507j": {
+                    "name": "uen_of_audit_firm4",
+                    "columnTitle": "Uen of audit firm4",
+                    "dataType": "Text",
+                    "index": "90"
+                },
+                "c_58iu7yhs1prthh7oy130ij0wv": {
+                    "name": "name_of_audit_firm4",
+                    "columnTitle": "Name of audit firm4",
+                    "dataType": "Text",
+                    "index": "91"
+                },
+                "c_ecjouunoxhoaxtsrbm5nvj5de": {
+                    "name": "uen_of_audit_firm5",
+                    "columnTitle": "Uen of audit firm5",
+                    "dataType": "Text",
+                    "index": "92"
+                },
+                "c_e403sln7p71u4xaktwnw8ghv1": {
+                    "name": "name_of_audit_firm5",
+                    "columnTitle": "Name of audit firm5",
+                    "dataType": "Text",
+                    "index": "93"
+                }
+            }
+        }
+    },
+    "errorMsg": ""
+}
