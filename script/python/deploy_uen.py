@@ -4,16 +4,17 @@ import json
 import sys
 from web3 import Web3, Account
 
+
 class deploy_uen_management:
 	def __init__(
 			self,
-			network_rpc: str = "https://sepolia.infura.io/v3/eff4f40e64214fec8abe2ce33331c3f8",
-			# network_rpc: str = "https://rpc-mumbai.maticvigil.com/",
-			# network_rpc: str = "https://polygon-mumbai.infura.io/v3/eff4f40e64214fec8abe2ce33331c3f8",
-			sender: str = "0x129e303eec3e6b6ddbb8dd668816f4f79bdd9679923eb78d56f23792d084d111", # AGZ FOOD PTE LTD admin account
-			instance_address: str = "0x2a3c31365C4270355FF372311bE25F1cBB39129c",
+			# network_rpc: str = os.environ.get("SEPOLIA_RPC_URL"),
+			network_rpc: str = os.environ.get("MUMBAI_RPC_URL"), 
+			sender: str = os.environ.get("PRIVATE_KEY"), # AGZ FOOD PTE LTD admin account
+			# instance_address: str = "0x2a3c31365C4270355FF372311bE25F1cBB39129c", # Sepolia
+			instance_address: str = "0x0509dA39A940E07D6E8D1948c405C38563a53Ae8", # Mumbai
 			abi_path: str = "../../abi/uen_management.json",
-			limit: int = 5,
+			limit: int = 200,
 			use_sample: bool = True,
 			automatic: bool = True,
 		):
@@ -32,6 +33,7 @@ class deploy_uen_management:
 		self.use_sample = use_sample
 		self.local_uen_list: dict = {}
 		self.uen_list_on_contract: list = []
+		self.prev_uen: str = ""
 
 		self.network_check()
 		click.echo("Using account: " + self.account.address)
@@ -57,7 +59,7 @@ class deploy_uen_management:
 			uen_list_on_contract = self.uen_list_on_contract
 
 		if not set(self.local_uen_list.keys()).issubset(set(self.uen_list_on_contract)):
-			click.echo("Data is different, updating now.")
+			click.echo("Data is different, checking the differences and updating now.")
 			uen_list_to_push = []
 			name_list_to_push = []
 			count: int = 0
@@ -66,40 +68,51 @@ class deploy_uen_management:
 					count += 1
 					uen_list_to_push.append(a)
 					name_list_to_push.append(self.local_uen_list[a])
+			
+			# Check to make sure that the first UEN is not the same as the previous one. If so, that means that the previous transaction has failed and we need to reduce the limit.
+			if uen_list_to_push[0] == self.prev_uen:
+				self.limit = int(0.9 * self.limit)
+				uen_list_to_push = uen_list_to_push[: int (0.9 * self.limit)]
+				name_list_to_push = name_list_to_push[: int (0.9 * self.limit)]
+				click.echo(f"First UEN is the same as the previous one, reducing the limit to {self.limit} and trying again.")
+			
+			self.prev_uen = uen_list_to_push[0]
+			click.echo(f"Pushing {self.limit} entries to the blockchain.")
 			try:
 
 				# Build a transaction
 				transaction = self.instance.functions.add_uens(uen_list_to_push, name_list_to_push).build_transaction({
 					"from": self.account.address,
-					# "to": self.instance.address,
-					# "value": 0,
-
-					'gas': 30000000,
-					'maxFeePerGas': 3000000,
-					'maxPriorityFeePerGas': 1000000,
-
+					"value": 0,
+					'gas': 20000000,
+					'maxFeePerGas': 3000000000,
+					'maxPriorityFeePerGas': 1000000000,
 					"nonce": self.web3.eth.get_transaction_count(self.account.address),
-					# "chainId": self.web3.eth.chain_id,
+					"chainId": self.web3.eth.chain_id,
 				})
+				
 				click.echo("Nonce: " + str(transaction["nonce"]))
+				click.echo("First UEN: " + str(uen_list_to_push[0]) + " First name: " + str(name_list_to_push[0]))
+				click.echo("Last UEN: " + str(uen_list_to_push[-1]) + " Last name: " + str(name_list_to_push[-1]))
+
 				signed_transaction = self.account.sign_transaction(transaction)
 				tx_hash = self.web3.eth.send_raw_transaction(signed_transaction.rawTransaction)
 				click.echo(f"Transaction pending: {tx_hash.hex()}")
 				self.web3.eth.wait_for_transaction_receipt(tx_hash)
-				click.echo(f"Transaction succeeded: {tx_hash.hex()}")
+				click.echo(f"Transaction succeeded")
 
 			except KeyboardInterrupt:
 				click.echo("Keyboard interrupt detected, stopping the upload process.")
 				sys.exit(0)
 
 			except Exception as e:
-				self.limit = self.limit // 2 if self.limit // 2 > 0 else 0
+				self.limit = int(0.9 * self.limit)
 				click.echo(f"Error uploading data: {e}\nReducing the limit to {self.limit} and trying again.")
 				self.upload_data()
 			
 			self.uen_list_on_contract = self.get_all_uen()
 			click.echo(f"{count} entries added. Continue data update.\nCurrent data count on blockchain: {len(self.uen_list_on_contract)}, total data count on local: {len(self.local_uen_list)}")
-			self.limit += 1
+			self.limit += int(0.01 * self.limit)
 			self.upload_data()
 		else:
 			click.echo(f"Data is the same. Total data on both blockchain and local: {len(self.uen_list_on_contract)}")
@@ -149,7 +162,7 @@ class deploy_uen_management:
 			if limit is not None:
 				if b > limit:
 					break
-			name_list[a] = self.instance.get_name(a).call()
+			name_list[a] = self.instance.functions.get_name(a).call()
 			click.echo(f"{a}: {name_list[a]}")
 		return name_list
 
@@ -165,7 +178,7 @@ class deploy_uen_management:
 			uen_list = uen_list_on_contract
 
 		uen_list = self.instance.functions.get_all_uens().call()
-		click.echo(f"There are {len(uen_list)} UENs on the blockchain.")
+		click.echo(f"\nThere are {len(uen_list)} UENs on the blockchain.")
 		self.uen_list_on_contract = uen_list if uen_list_on_contract == None else None
 		return uen_list
 
@@ -174,5 +187,4 @@ class deploy_uen_management:
 		click.echo(f"You are connected to EVM network with ID '{chain_id}'.")
 
 if __name__ == "__main__":
-	instance = deploy_uen_management(automatic=True, use_sample=True)
-	# print(instance.get_all_uen())
+	instance = deploy_uen_management(automatic=True, use_sample=False)
