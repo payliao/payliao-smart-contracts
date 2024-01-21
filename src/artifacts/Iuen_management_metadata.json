@@ -8,6 +8,37 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string[]",
+						"name": "_uens",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "_names",
+						"type": "string[]"
+					}
+				],
+				"name": "add_uens",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "get_all_uens",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "string",
 						"name": "_uen",
 						"type": "string"
@@ -22,6 +53,37 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string[]",
+						"name": "_uens",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "_names",
+						"type": "string[]"
+					}
+				],
+				"name": "modify_uens",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string[]",
+						"name": "_uens",
+						"type": "string[]"
+					}
+				],
+				"name": "remove_uens",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -38,7 +100,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"sgdm.sol": "Iuen_management"
+			"uen_management.sol": "Iuen_management"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -60,38 +122,6 @@
 				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
 			]
 		},
-		"@openzeppelin/contracts/interfaces/draft-IERC6093.sol": {
-			"keccak256": "0x60c65f701957fdd6faea1acb0bb45825791d473693ed9ecb34726fdfaa849dd7",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://ea290300e0efc4d901244949dc4d877fd46e6c5e43dc2b26620e8efab3ab803f",
-				"dweb:/ipfs/QmcLLJppxKeJWqHxE2CUkcfhuRTgHSn8J4kijcLa5MYhSt"
-			]
-		},
-		"@openzeppelin/contracts/token/ERC20/ERC20.sol": {
-			"keccak256": "0xc3e1fa9d1987f8d349dfb4d6fe93bf2ca014b52ba335cfac30bfe71e357e6f80",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://c5703ccdeb7b1d685e375ed719117e9edf2ab4bc544f24f23b0d50ec82257229",
-				"dweb:/ipfs/QmTdwkbQq7owpCiyuzE7eh5LrD2ddrBCZ5WHVsWPi1RrTS"
-			]
-		},
-		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
-			"keccak256": "0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c",
-				"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq"
-			]
-		},
-		"@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
-			"keccak256": "0xaa761817f6cd7892fcf158b3c776b34551cde36f48ff9703d53898bc45a94ea2",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://0ad7c8d4d08938c8dfc43d75a148863fb324b80cf53e0a36f7e5a4ac29008850",
-				"dweb:/ipfs/QmcrhfPgVNf5mkdhQvy1pMv51TFokD3Y4Wa5WZhFqVh8UV"
-			]
-		},
 		"@openzeppelin/contracts/utils/Context.sol": {
 			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
 			"license": "MIT",
@@ -100,12 +130,12 @@
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
 			]
 		},
-		"sgdm.sol": {
-			"keccak256": "0x58b337b0d7e30ee47566a314c2a823f40a48ef3ab85aa26797479f7ba0234a31",
+		"uen_management.sol": {
+			"keccak256": "0x06eb4d390e6021670461352fbadb24992df95a044da1525be79691167c249522",
 			"license": "Proprietary",
 			"urls": [
-				"bzz-raw://5d4d4f730bc6e161d0e461a86dc0e789977013681402cf4fe8635b0865ebe488",
-				"dweb:/ipfs/Qmc3MZpfVaJVfctf3RiX8BYpD4swhA6sLN1SwQH67gb347"
+				"bzz-raw://3f2675e946fc9f0bf6d40e064d3207e22fe07ef0aee1a98d4ff9d5548ebf0a6c",
+				"dweb:/ipfs/QmSRaHmfyQgDyJEUWgtchyFoVbdLy2qpXXKpfXmdfDNscg"
 			]
 		}
 	},
