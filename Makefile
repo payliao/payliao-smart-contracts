@@ -23,7 +23,7 @@ install :; forge install openzeppelin/openzeppelin-contracts --no-commit
 # Update Dependencies
 update:; forge update
 
-build:; forge build
+build:; forge build --skip /Users/xueyao/Documents/sgqr/payliao/payliao-smart-contracts/script/python/.venv/lib/python3.10/site-packages/ethpm/ethpm-spec/examples/wallet-with-send/contracts/WalletWithSend.sol /Users/xueyao/Documents/sgqr/payliao/payliao-smart-contracts/script/python/.venv/lib/python3.10/site-packages/ethpm/ethpm-spec/examples/wallet/contracts/Wallet.sol /Users/xueyao/Documents/sgqr/payliao/payliao-smart-contracts/script/python/.venv/lib/python3.10/site-packages/ethpm/ethpm-spec/examples/transferable/contracts/Transferable.sol /Users/xueyao/Documents/sgqr/payliao/payliao-smart-contracts/script/python/.venv/lib/python3.10/site-packages/ethpm/ethpm-spec/examples/wallet/contracts/Wallet.sol script/python
 
 test :; forge test 
 
