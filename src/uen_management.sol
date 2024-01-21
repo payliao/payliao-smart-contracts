@@ -39,9 +39,25 @@ contract uen_management is Ownable {
     }
 
     // Get all UENs from the list. This is a public function.
-    function get_all_uens() public view returns (string[] memory) {
-        return uen_list;
-    }
+	function get_all_uens(uint startIndex, uint endIndex) public view returns (string[] memory) {
+		require(startIndex <= endIndex, "Start index must be less than or equal to end index");
+		require(endIndex < uen_list.length, "End index must be less than the length of the list");
+
+		if (startIndex == 0 && endIndex == 0) {
+			return uen_list;
+		} else {
+			string[] memory result = new string[](endIndex - startIndex + 1);
+			for (uint i = startIndex; i <= endIndex; i++) {
+				result[i - startIndex] = uen_list[i];
+			}
+			return result;
+		}
+	}
+
+	// Get the length of the UEN list. This is a public function.
+	function get_uen_list_length() public view returns (uint256) {
+		return uen_list.length;
+	}
 
     /* Add UEN and name to the list. This is an onlyOwner function. 
     This accepts 2 arrays as the input, one for the UEN and one for the name. 

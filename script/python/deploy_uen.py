@@ -14,12 +14,13 @@ class deploy_uen_management:
 			# instance_address: str = "0x2a3c31365C4270355FF372311bE25F1cBB39129c", # Sepolia
 			instance_address: str = "0x0509dA39A940E07D6E8D1948c405C38563a53Ae8", # Mumbai
 			abi_path: str = "../../abi/uen_management.json",
-			limit: int = 200,
+			limit: int = 100,
 			use_sample: bool = True,
 			automatic: bool = True,
 		):
 
-		self.network_rpc = network_rpc
+		self.network_rpc = os.environ.get("MUMBAI_RPC_URL")
+		self.network_rpc_2 = os.environ.get("MUMBAI_RPC_URL_2")
 		self.sender = sender
 
 		with open(abi_path, "r") as f:
@@ -34,6 +35,8 @@ class deploy_uen_management:
 		self.local_uen_list: dict = {}
 		self.uen_list_on_contract: list = []
 		self.prev_uen: str = ""
+		self.gas = 100000000
+		self.prev_transaction = ""
 
 		self.network_check()
 		click.echo("Using account: " + self.account.address)
@@ -62,16 +65,21 @@ class deploy_uen_management:
 			click.echo("Data is different, checking the differences and updating now.")
 			uen_list_to_push = []
 			name_list_to_push = []
-			count: int = 0
-			for a in self.local_uen_list:
-				if a not in self.uen_list_on_contract and count < self.limit:
-					count += 1
-					uen_list_to_push.append(a)
-					name_list_to_push.append(self.local_uen_list[a])
-			
+
+			# Check if the last 200 UENs of the local list and the remote list are the same. If so, that means the previous transaction has succeeded and we can upload the next batch of UENs. We check 200 to speed up the process since checking the whole list is extremely slow on Python.
+			if set(self.uen_list_on_contract[-200:]).issubset(set(list(self.local_uen_list.keys())[len(self.uen_list_on_contract) - 300:])):
+				click.echo("Last 200 UENs of local and remote list are the same, uploading the next batch of UENs.")
+
+				count: int = 0
+				for a in list(self.local_uen_list.keys())[len(self.uen_list_on_contract) - 200:]:
+					if a not in self.uen_list_on_contract[-300:] and count < self.limit:
+						count += 1
+						uen_list_to_push.append(a)
+						name_list_to_push.append(self.local_uen_list[a])
+
 			# Check to make sure that the first UEN is not the same as the previous one. If so, that means that the previous transaction has failed and we need to reduce the limit.
 			if uen_list_to_push[0] == self.prev_uen:
-				self.limit = int(0.9 * self.limit)
+				self.limit = int(0.9 * self.limit) if self.limit >= 1 else 1
 				uen_list_to_push = uen_list_to_push[: int (0.9 * self.limit)]
 				name_list_to_push = name_list_to_push[: int (0.9 * self.limit)]
 				click.echo(f"First UEN is the same as the previous one, reducing the limit to {self.limit} and trying again.")
@@ -84,9 +92,9 @@ class deploy_uen_management:
 				transaction = self.instance.functions.add_uens(uen_list_to_push, name_list_to_push).build_transaction({
 					"from": self.account.address,
 					"value": 0,
-					'gas': 20000000,
-					'maxFeePerGas': 3000000000,
-					'maxPriorityFeePerGas': 1000000000,
+					'gas': self.gas, #100000000,
+					'maxFeePerGas': 100000000000,
+					'maxPriorityFeePerGas': 10000000000,
 					"nonce": self.web3.eth.get_transaction_count(self.account.address),
 					"chainId": self.web3.eth.chain_id,
 				})
@@ -105,8 +113,13 @@ class deploy_uen_management:
 				click.echo("Keyboard interrupt detected, stopping the upload process.")
 				sys.exit(0)
 
+			except ValueError as e:
+				click.echo("Value error detected, raising gas price by 10% and trying again.")
+				self.gas = int(1.1 * self.gas) + 1
+
 			except Exception as e:
-				self.limit = int(0.9 * self.limit)
+				self.gas = 100000000
+				self.limit = int(0.9 * self.limit) if self.limit >= 1 else 1
 				click.echo(f"Error uploading data: {e}\nReducing the limit to {self.limit} and trying again.")
 				self.upload_data()
 			
