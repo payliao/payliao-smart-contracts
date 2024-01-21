@@ -1,4 +1,4 @@
-pragma solidity 0.8.10;
+pragma solidity 0.8.22;
 
 import "forge-std/Test.sol";
 import {whitelist} from "../src/whitelist.sol";
