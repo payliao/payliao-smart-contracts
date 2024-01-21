@@ -37,6 +37,7 @@ The UEN script is meant to grab the UEN from [data.gov.sg]([data.gov.sg](https:/
 ## Contracts (Polygon Mumbai)
 * SGDk: `0xDF20A17667D318A457FF7E720E6960c558c22214`
 * UEN Management (UEN Database): `0x0509dA39A940E07D6E8D1948c405C38563a53Ae8`
+  * New: `0xcF20d9947590E7d8Fc62d1ca0ea775Ee5bC5faF9`
 * Whitelist: `0x72c7E3Ed8CCD086657E985782E0849c52F7EE392`
 * SGDm: `0x0a4B5Ce265b4Db33b975999d882b1555103b1ABd`
 
