@@ -1,7 +1,7 @@
 # Overview
 The backend contains a few components. They are listed and explained here.
 1. Python script
-1. Contracts (Ethereum Sepolia)
+1. Contracts (Polygon Mumbai)
 
 ## Description
 
@@ -41,7 +41,7 @@ The UEN script is meant to grab the UEN from [data.gov.sg]([data.gov.sg](https:/
 * Whitelist: `0x72c7E3Ed8CCD086657E985782E0849c52F7EE392`
 * SGDm: `0x0a4B5Ce265b4Db33b975999d882b1555103b1ABd`
 
-## Contracts (Sepolia)
+## Contracts (Polygon Mumbai)
 * SGDk: `0x6A9B2bb78458a8b6054EB5ca9EbBBED449A25292`
 * UEN Management (UEN Database): `0x2a3c31365C4270355FF372311bE25F1cBB39129c`
 * Whitelist: `0x7F4a89c710484D01F6CB6A191f5F2A31a048ce07`
