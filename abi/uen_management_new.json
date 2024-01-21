@@ -1,0 +1,232 @@
+{
+	"abi": [
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "_initialOwner",
+					"type": "address"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "constructor"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "owner",
+					"type": "address"
+				}
+			],
+			"name": "OwnableInvalidOwner",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "account",
+					"type": "address"
+				}
+			],
+			"name": "OwnableUnauthorizedAccount",
+			"type": "error"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "previousOwner",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "newOwner",
+					"type": "address"
+				}
+			],
+			"name": "OwnershipTransferred",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "string[]",
+					"name": "_uens",
+					"type": "string[]"
+				},
+				{
+					"indexed": false,
+					"internalType": "string",
+					"name": "_message",
+					"type": "string"
+				}
+			],
+			"name": "uen_event",
+			"type": "event"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string[]",
+					"name": "_uens",
+					"type": "string[]"
+				},
+				{
+					"internalType": "string[]",
+					"name": "_names",
+					"type": "string[]"
+				}
+			],
+			"name": "add_uens",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "startIndex",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "endIndex",
+					"type": "uint256"
+				}
+			],
+			"name": "get_all_uens",
+			"outputs": [
+				{
+					"internalType": "string[]",
+					"name": "",
+					"type": "string[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string",
+					"name": "_uen",
+					"type": "string"
+				}
+			],
+			"name": "get_name",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "get_uen_list_length",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string[]",
+					"name": "_uens",
+					"type": "string[]"
+				},
+				{
+					"internalType": "string[]",
+					"name": "_names",
+					"type": "string[]"
+				}
+			],
+			"name": "modify_uens",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "owner",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "string[]",
+					"name": "_uens",
+					"type": "string[]"
+				}
+			],
+			"name": "remove_uens",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "renounceOwnership",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "newOwner",
+					"type": "address"
+				}
+			],
+			"name": "transferOwnership",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"name": "uen_list",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		}
+	]
+}
